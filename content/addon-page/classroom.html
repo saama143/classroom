@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Classroom</title>
+	<link href="bootstrap-css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="classroom.css">
+	<script src="jquery.js"></script>
+	<script src="bootstrap-js/bootstrap.min.js"></script>
+	<script src="oauth.js"></script>
+	<script src="classroom.js"></script>
+	<script src="dictionary.js"></script>
+</head>
+<body style="background: #eeeeee;">
+
+
+	<div id="sm-menu-box" style="background: white;position: fixed;z-index: 9999;height: 100%;width: 30%;overflow: hidden;display: none;">
+
+		<div style="text-align: right;">
+			<i id="sm-menu-close" style="margin: 10px;cursor: pointer;" class="fa fa-close"></i>
+		</div>
+
+		<div class="row">
+			<div class="col-sm-12 sm-menu-items" id="menu-courses"> <i id="sm-menu-close" style="margin: 10px;cursor: pointer;" class="fa fa-university"></i> Courses</div>
+			<div class="col-sm-12 sm-menu-items" id="menu-dictionary"> <i id="sm-menu-close" style="margin: 10px;cursor: pointer;" class="fa fa-search-plus"></i> Dictionary</div>
+		</div>
+
+	</div>
+
+	<div id="overlay"></div>
+	<div class="loader"></div>
+
+
+
+
+    <nav class="navbar header-top navbar-static-top navbar-expand-lg" style="background: #4b4b4b;">
+      
+      <div class="navbar-brand">
+      	<span style="cursor: pointer;" id="sm-menu"><i style="color: white;font-size: 30px;margin-top: 10px;" class="fa fa-bars"></i></span> 
+      </div>
+
+
+      <div class="collapse navbar-collapse" id="navbarText">
+        <ul class="navbar-nav ml-md-auto d-md-flex">
+        	<li class="nav-item"><i style="color: white;font-size: 18px;margin-top: 16px;margin-right: 100px;" class="fa fa-plus"></i></li>
+        	<li class="nav-item" id="userphoto"></li>
+        </ul>
+      </div>
+    </nav>
+
+
+
+
+	 	
+
+
+
+
+	<div class="container-fluid main-container" style="margin-top:20px;">
+	    <div class="container">
+
+
+	    	<div class="row" id="sm-secondary-menu">
+	    		
+	    	</div>
+
+
+	    	<div class="row" id="sm-main-container">
+
+	    		
+
+
+
+	    	</div>
+	    </div>
+	</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

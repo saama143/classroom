@@ -1,0 +1,1142 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta content="utf-8" http-equiv="encoding">
+  <title>Textmarker</title>
+	<link rel="stylesheet" type="text/css" href="addon-page.css">
+</head>
+<script src="jquery.js"></script>
+<script src="oauth.js"></script>
+<body>
+
+  <div class="u-cf toggle-button" data-target="mainnav-list" data-toggle="remove">
+
+  	<nav id="mainnav" class="nav" data-page-nav>
+      <div class="menu-toggler toggle-button" data-target="mainnav-list" data-toggle="toggle"></div>
+  		<ul id="mainnav-list">
+        <li id="mainnav-dashboard" data-target="dashboard" class="nav-button" data-l10n-id="dashboard">Dashboard</li>
+        <li id="mainnav-distionary" data-target="dictionary" class="nav-button" data-l10n-id="distionary">Dictionary</li>
+  			<li id="mainnav-news" data-target="news" class="nav-button" data-l10n-id="news"></li>
+  			<li id="mainnav-manual" data-target="manual" class="nav-button" data-l10n-id="manual"></li>
+  			<li id="mainnav-settings" data-target="settings" class="nav-button" data-l10n-id="settings"></li>
+        <li id="mainnav-sharing" data-target="sharing" class="nav-button" data-l10n-id="sharing"></li>
+        <li id="mainnav-history" data-target="history" class="nav-button" data-l10n-id="history"></li>
+        <li id="mainnav-sync" data-target="sync" class="nav-button" data-l10n-id="sync"></li>
+        <li id="mainnav-export" data-target="export" class="nav-button" data-l10n-id="export"></li>
+  			<li id="mainnav-contact" data-target="contact" class="nav-button" data-l10n-id="contact"></li>
+  			<li id="mainnav-logs" data-target="logs" class="nav-button" data-l10n-id="logs"></li>
+  		</ul>
+  	</nav>
+
+    <section id="main">
+      <h1>
+        <a class="moz-addon" href="">Textmarker <span id="version-number"></span></a>
+        <span>by <a class="moz-developer" href="">underflyingbirches</a></span>
+      </h1>
+
+      <div id="dashboard" class="content u-display--none">
+        <h2 data-l10n-id="">Dashboard</h2>
+
+        <div id="userinfo">
+          
+        </div>
+
+
+        
+      </div>
+
+
+      <div id="dictionary" class="content u-display--none">
+        <h2 data-l10n-id="">Dictionary</h2>
+
+        <div id="di_main_cn" >
+
+
+        <div id="di_field_cn" style="text-align: center;padding: 10px;border: 1px solid #cbcbcb;background: #ededed;">
+          <div>
+            <input style="width: 70%;" type="text" name="" id="search">
+          </div>
+          <div style="margin: 10px;">Search By</div>
+          <div style="margin: 10px;">
+            <input style="display: initial;" type="radio" name="by" value="tag">Tag
+            <input style="display: initial;" type="radio" name="by" value="eword">English Word
+            <input style="display: initial;" type="radio" name="by" value="jword">Japanese Word
+            <input style="display: initial;" type="radio" name="by" value="kana">Kana
+          </div>
+          <div style="margin: 10px;">
+            <button id="search_btn">Search</button>
+          </div>
+        </div>
+
+
+
+        <div id="di_words_cn" style="padding: 10px;border: 1px solid #cbcbcb;background: #ededed;margin-top:20px;">
+
+          
+        </div>
+
+
+          
+        </div>
+
+
+        
+      </div>
+
+      <div id="news" class="content u-display--none">
+        <h2 data-l10n-id="h10"></h2>
+
+        <h4 class="u-display--inline-block" data-l10n-id="h120"></h4> <small>3.8.3</small>
+        <p>
+          <span data-l10n-id="t120"></span><br>
+          <small data-l10n-id="t121"></small>
+        </p>
+
+        <h4 class="u-display--inline-block" data-l10n-id="h119"></h4> <small>3.8.0</small>
+        <p data-l10n-id="t119"></p>
+
+        <h4 class="u-display--inline-block" data-l10n-id="h118"></h4> <small>3.7.0</small>
+        <p data-l10n-id="t118"></p>
+
+        <h4 class="u-display--inline-block" data-l10n-id="h117"></h4>
+        <p data-l10n-id="t117"></p>
+
+        <h4 class="u-display--inline-block" data-l10n-id="h116"></h4> <small>3.6.1</small>
+        <p data-l10n-id="t116"></p>
+
+        <h4 class="u-display--inline-block" data-l10n-id="h114"></h4> <small>3.6.0 <span class="u-color--red" data-l10n-id="experimental"></span></small>
+        <p data-l10n-id="t114"></p>
+
+        <h4 class="u-display--inline-block" data-l10n-id="h115"></h4> <small>3.6.0 <span class="u-color--red" data-l10n-id="experimental"></span></small>
+        <p data-l10n-id="t115"></p>
+
+        <h4 class="u-display--inline-block" data-l10n-id="h111"></h4> <small>3.5.0</small>
+        <p data-l10n-id="t111"></p>
+
+        <h4 class="u-display--inline-block" data-l10n-id="h112"></h4> <small>3.5.0</small>
+        <p data-l10n-id="t112"></p>
+
+        <h4 class="u-display--inline-block" data-l10n-id="h113"></h4> <small>3.5.0</small>
+        <p data-l10n-id="t113"></p>
+      </div>
+
+      <div id="manual" class="content u-display--none">
+        <h2 data-l10n-id="h20"></h2>
+        <nav class="subnav nav">
+          <ul>
+            <li data-target="manual-quickstart" class="nav-button active" data-l10n-id="subnav_manual_quick"></li><li data-target="manual-control" class="nav-button" data-l10n-id="subnav_manual_control"></li><li data-target="manual-mark" class="nav-button" data-l10n-id="subnav_manual_mark"></li><li data-target="manual-functions" class="nav-button" data-l10n-id="subnav_manual_func"></li><li data-target="manual-history" class="nav-button" data-l10n-id="subnav_manual_history"></li><li data-target="manual-trouble" class="nav-button" data-l10n-id="subnav_manual_trouble"></li>
+          </ul>
+        </nav>
+        <div id="manual-quickstart" class="tab u-display--none">
+          <h3 data-l10n-id="h211"></h3>
+          <ol>
+            <li><strong class="u-color--turquoise">1.&nbsp;</strong> <span data-l10n-id="t211"></span></li>
+            <li><strong class="u-color--turquoise">2.&nbsp;</strong> <span data-l10n-id="t211b"></span></li>
+            <li><strong class="u-color--turquoise">3.&nbsp;</strong> <span data-l10n-id="t211c"></span></li>
+          </ol>
+          <br>
+          <p data-l10n-id="t212"></p>
+          <p data-l10n-id="t213"></p>
+          <p data-l10n-id="t214"></p>
+          <p data-l10n-id="t215"></p>
+          <p>
+            <span data-l10n-id="t216"></span><br>
+            <span data-l10n-id="t217"></span>
+          </p>
+          <p data-l10n-id="t218"></p>
+        </div>
+        <div id="manual-control" class="tab u-display--none">
+          <h3 data-l10n-id="h221"></h3>
+          <p data-l10n-id="t221"></p>
+          <article>
+            <h4 data-l10n-id="h222"></h4>
+            <p><span data-l10n-id="t222"></span></p>
+            <small data-l10n-id="ref_settings_sc"></small>
+          </article>
+          <article>
+            <h4 data-l10n-id="h223"></h4>
+            <p>
+              <span data-l10n-id="t224"></span><br>
+              <span data-l10n-id="t223"></span>
+            </p>
+            <small data-l10n-id="ref_settings_sc"></small>
+          </article>
+          <article>
+            <h4 data-l10n-id="h224"></h4>
+            <p data-l10n-id="t225"></span></p>
+            <small data-l10n-id="ref_settings_sc"></small>
+          </article>
+        </div>
+        <div id="manual-mark" class="tab u-display--none">
+          <h3 data-l10n-id="h231"></h3>
+          <article>
+            <h4 data-l10n-id="h232"></h4>
+            <p><span data-l10n-id="t231"></span><br>
+              <span data-l10n-id="t232"></span>
+            </p>
+            <p data-l10n-id="t233"></p>
+          </article>
+          <article>
+            <h4 data-l10n-id="h233"></h4>
+            <p data-l10n-id="t234"></p>
+            <small data-l10n-id="ref_settings_marker"></small>
+          </article>
+          <article>
+            <h4 data-l10n-id="h234"></h4>
+            <p><span data-l10n-id="t235"></span><br>
+              <span data-l10n-id="t236"></span></p>
+              <small data-l10n-id="ref_settings_marker"></small>
+          </article>
+        </div>
+        <div id="manual-functions" class="tab u-display--none">
+          <h3 data-l10n-id="h241"></h3>
+          <article>
+            <h4 data-l10n-id="h242"></h4>
+            <p data-l10n-id="t241"></p>
+            <small>
+              <span data-l10n-id="t242"></span><br>
+              <span data-l10n-id="t243"></span>
+            </small>
+          </article>
+          <article>
+            <h4 data-l10n-id="h243"></h4>
+            <p data-l10n-id="t244"></p>
+            <small>
+              <span data-l10n-id="t245"></span><br>
+              <span data-l10n-id="t246"></span>
+            </small>
+          </article>
+          <article>
+            <h4 data-l10n-id="h244"></h4>
+            <p data-l10n-id="t247"></p>
+            <small>
+              <span data-l10n-id="t248"></span><br>
+              <span data-l10n-id="t249"></span>
+            </small>
+          </article>
+          <article>
+            <h4 data-l10n-id="h246"></h4>
+            <p>
+              <span data-l10n-id="t2413"></span><br>
+              <span data-l10n-id="x241"></span>
+            </p>
+            <small>
+              <span data-l10n-id="t2414"></span><br>
+              <span data-l10n-id="t2415"></span>
+            </small>
+          </article>
+          <article>
+            <h4 data-l10n-id="h257"></h4>
+            <p data-l10n-id="t2522"></p>
+            <ol class="unset">
+              <li data-l10n-id="t2523"></li>
+              <li data-l10n-id="t2524"></li>
+              <li data-l10n-id="t2525"></li>
+              <li data-l10n-id="t2526"></li>
+              <li data-l10n-id="t2527"></li>
+              <li data-l10n-id="t2528"></li>
+            </ol>
+          </article>
+          <article>
+            <h4 data-l10n-id="h247"></h4>
+            <p data-l10n-id="t2416"></p>
+            <small>
+              <span data-l10n-id="t2417"></span><br>
+              <span data-l10n-id="t2418"></span><br>
+              <span data-l10n-id="x242"></span>
+            </small>
+          </article>
+          <article>
+            <h4 data-l10n-id="h248"></h4>
+            <p data-l10n-id="t2419"></p>
+            <small>
+              <span data-l10n-id="t2420"></span><br>
+              <span data-l10n-id="t2421"></span>
+            </small>
+          </article>
+          <article>
+            <h4 data-l10n-id="h249"></h4>
+            <p data-l10n-id="t2422"></p>
+            <small>
+              <span data-l10n-id="t2423"></span><br>
+              <span data-l10n-id="t2424"></span>
+            </small>
+          </article>
+        </div>
+        <div id="manual-history" class="tab u-display--none">
+          <h3 data-l10n-id="h251"></h3>
+          <article>
+            <h4 data-l10n-id="h252"></h4>
+            <p data-l10n-id="t251"></p>
+            <small data-l10n-id="ref_settings_sc"></small>
+            <br><br>
+            <small>
+              <span data-l10n-id="t252"></span><br>
+              <span data-l10n-id="t253"></span>
+            </small>
+            <br><br>
+            <p data-l10n-id="t254"></p>
+            <small data-l10n-id="ref_settings_history"></small>
+            <br><br>
+            <p>
+              <span class="u-color--red">&#9888;</span>
+              <span data-l10n-id="x251"></span>
+            </p>
+          </article>
+          <article>
+            <h4 data-l10n-id="h253"></h4>
+            <p data-l10n-id="t255"></p>
+          </article>
+          <article>
+            <h4 data-l10n-id="h254"></h4>
+            <p><span data-l10n-id="t256"></span><br>
+              <span data-l10n-id="t257"></span>
+            </p>
+            <ol>
+              <li data-l10n-id="t258"></li>
+              <li data-l10n-id="t259"></li>
+              <li data-l10n-id="t2511"></li>
+            </ol>
+          </article>
+          <article>
+            <h4 data-l10n-id="h255"></h4>
+            <p><span data-l10n-id="t2513"></span><br>
+              <span data-l10n-id="t2514"></span></p>
+            <ol>
+              <li data-l10n-id="t2515"></li>
+              <li data-l10n-id="t2516"></li>
+              <li data-l10n-id="x265"></li>
+              <li data-l10n-id="t2517"></li>
+              <li data-l10n-id="x266"></li>
+              <li data-l10n-id="t2518"></li>
+              <li data-l10n-id="t2519"></li>
+            </ol>
+          </article>
+          <article>
+            <h4 data-l10n-id="h256"></h4>
+            <p><span data-l10n-id="t2520"></span><br>
+              <span data-l10n-id="t2521"></span>
+            </p>
+            <small data-l10n-id="ref_settings_history"></small>
+          </article>
+        </div>
+        <div id="manual-trouble" class="tab u-display--none">
+          <h3 data-l10n-id="h261"></h3>
+          <article>
+            <h4 data-l10n-id="x267"></h4>
+            <p data-l10n-id="x268"></p>
+            <p data-l10n-id="x269"></p>
+          </article>
+          <article>
+            <h4 data-l10n-id="x2610"></h4>
+            <p data-l10n-id="x2611"></p>
+            <p data-l10n-id="x2612"></p>
+          </article>
+          <article>
+            <h4 data-l10n-id="x261"></h4>
+            <p><span data-l10n-id="x262"></span></p>
+          </article>
+          <article>
+            <h4 data-l10n-id="h262"></h4>
+            <p><span data-l10n-id="t261"></span><br>
+							<span data-l10n-id="t262"></span><br>
+							<span data-l10n-id="t263"></span><br>
+              <span data-l10n-id="t264"></span>
+            </p>
+          </article>
+          <article>
+            <h4 data-l10n-id="h263"></h4>
+            <p data-l10n-id="t265"></p>
+            <ol>
+              <li data-l10n-id="t266"></li>
+              <li data-l10n-id="t267"></li>
+            </ol>
+          </article>
+          <article>
+            <h4 data-l10n-id="h264"></h4>
+            <p><span data-l10n-id="t117"></span>
+            </p>
+          </article>
+          <article>
+            <h4 data-l10n-id="h265"></h4>
+            <p><span data-l10n-id="t2613"></span><br>
+              <span data-l10n-id="t2614"></span>
+            </p>
+          </article>
+        </div>
+      </div>
+
+      <div id="settings" class="content u-display--none">
+        <h2 data-l10n-id="h40"></h2>
+        <nav class="subnav nav">
+          <ul>
+            <li data-target="settings-markers" class="nav-button active" data-l10n-id="subnav_settings_mark"></li><li data-target="settings-shortcuts" class="nav-button" data-l10n-id="subnav_settings_sc"></li><li data-target="settings-history" class="nav-button" data-l10n-id="subnav_settings_history"></li><li data-target="settings-notifications" class="nav-button" data-l10n-id="subnav_settings_notifications"></li><li data-target="settings-misc" class="nav-button" data-l10n-id="subnav_settings_misc"></li>
+          </ul>
+        </nav>
+        <div id="settings-markers" class="tab u-display--none">
+          <section id="customize-markers">
+            <h3 class="u-display--inline-block" data-l10n-id="h411"></h3>
+            <select id="customized-key" class="small">
+              <option value="m" selected>M</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+            </select>
+            <br>
+            <div class="option-row">
+              <input type="checkbox" checked id="bg-color-checkbox" class="toggle-button css css-color" data-target="bg-color" name="background-color">
+              <label for="bg-color-checkbox" class="fake-cb"><span>&#10003;</span></label>
+              <label for="bg-color" data-l10n-id="t411"></label>
+              <input class="css" id="bg-color" type="color" value="" name="background-color">
+            </div>
+            <div class="option-row">
+              <input type="checkbox" id="text-color-checkbox" class="toggle-button css css-color" data-target="text-color" name="color">
+              <label for="text-color-checkbox" class="fake-cb"><span>&#10003;</span></label>
+              <label for="text-color" data-l10n-id="t412"></label>
+              <input class="css" id="text-color" type="color" value="#000000" name="color" disabled>
+            </div>
+            <div class="option-row">
+              <input type="checkbox" id="border-color-checkbox" class="toggle-button css css-color" data-target="border-color" name="border-bottom">
+              <label for="border-color-checkbox" class="fake-cb"><span>&#10003;</span></label>
+              <label for="border-color" data-l10n-id="t4124"></label>
+              <input class="css" id="border-color" type="color" value="#ff0000" name="border-bottom" disabled>
+              <span class="i toggle-button" data-target="i--underline" data-toggle="toggle">i</span>
+              <span id="i--underline" class="u-display--none u-color--turquoise" data-l10n-id="t4125"></span>
+            </div>
+            <div class="option-row">
+              <label for="font-size" data-l10n-id="t413"></label>
+              <select id="font-size" class="big css" name="font-size">
+                <option value="default" selected>default</option>
+                <option value="7px">7px</option>
+                <option value="8px">8px</option>
+                <option value="9px">9px</option>
+                <option value="10px">10px</option>
+                <option value="11px">11px</option>
+                <option value="12px">12px</option>
+                <option value="13px">13px</option>
+                <option value="14px">14px</option>
+                <option value="15px">15px</option>
+                <option value="16px">16px</option>
+                <option value="17px">17px</option>
+                <option value="19px">19px</option>
+                <option value="23px">23px</option>
+                <option value="29px">29px</option>
+                <option value="37px">37px</option>
+              </select>
+            </div>
+            <div class="option-row">
+              <label for="font-family" data-l10n-id="t414"></label>
+              <select id="font-family" class="big css" name="font-family">
+                <option value="default" selected>default</option>
+                <option value="Verdana, Arial, sans-serif">Verdana</option>
+                <option value="Arial, sans-serif">Arial</option>
+                <option value="Helvetica, Arial, sans-serif">Helvetica</option>
+                <option value="Tahoma, Verdana, Arial, sans-serif">Tahoma</option>
+                <option value="Georgia, times, serif">Georgia</option>
+                <option value="Times, serif">Times</option>
+              </select>
+            </div>
+            <div class="option-row">
+              <label for="font-weight" data-l10n-id="t415"></label>
+              <select id="font-weight" class="big css" name="font-weight">
+                <option value="default" selected>default</option>
+                <option value="bold" data-l10n-id="t416"></option>
+                <option value="normal">normal</option>
+              </select>
+            </div>
+            <div class="option-row">
+              <label for="font-style" data-l10n-id="t417"></label>
+              <select id="font-style" class="big css" name="font-style">
+                <option value="default" selected>default</option>
+                <option value="italic" data-l10n-id="t418"></option>
+                <option value="normal">normal</option>
+              </select>
+            </div>
+            <div class="option-row">
+              <label for="text-decoration" data-l10n-id="t419"></label>
+              <select id="text-decoration" class="big css" name="text-decoration">
+                <option value="default" selected>default</option>
+                <option value="underline" data-l10n-id="t4110"></option>
+                <option value="line-through" data-l10n-id="t4111"></option>
+                <option value="overline" data-l10n-id="t4112"></option>
+              </select>
+            </div>
+            <div class="option-row">
+              <label for="text-shadow" data-l10n-id="t4113"></label>
+              <select id="text-shadow" class="big css shadow" name="text-shadow">
+                <option value="default" id="text-shadow-option-default" class="toggle-button" data-target="shadow-settings" data-toggle="remove" selected>default</option>
+                <option value="shadow" id="text-shadow-option-shadow" class="toggle-button" data-target="shadow-settings" data-toggle="add" data-l10n-id="t4114"></option>
+                <option value="none" id="text-shadow-option-none" class="toggle-button" data-target="shadow-settings" data-toggle="remove" data-l10n-id="t4115"></option>
+              </select>
+            </div>
+            <div id="shadow-settings" class="u-cf accordion">
+              <h4 data-l10n-id="h412"></h4>
+      				<div id="shadow-values">
+                <div>
+      					  <label data-l10n-id="t4116"></label>
+                  <input class="css shadow-value shadow-px-value" id="text-shadow-x" type="number" value="1" min="-20" max="20" name="x"> px
+                </div>
+                <div>
+      					  <label data-l10n-id="t4117"></label>
+                  <input class="css shadow-value shadow-px-value" id="text-shadow-y" type="number" value="1" name="y"> px
+                </div>
+                <div>
+      					  <label data-l10n-id="t4118"></label>
+                  <input class="css shadow-value shadow-px-value" id="text-shadow-blur" type="number" value="1" name="blur"> px
+                </div>
+                <div>
+      					  <label data-l10n-id="t4119"></label>
+                  <input class="css shadow-value" id="text-shadow-color" type="color" name="color">
+                </div>
+      				</div>
+      			</div>
+          </section>
+    			<section id="preview" class="u-cf">
+            <button type="button" data-l10n-id="h413" class="toggle-button" data-target="example" data-toggle="toggle"></button>
+    				<span id="example" class="u-display--none" data-l10n-id="t4120"></span>
+    			</section>
+          <div class="seperator"></div>
+          <section id="add-markers" class="block-spacing">
+            <h3 data-l10n-id="h414"></h3>
+            <p data-l10n-id="t4121"></p>
+            <div id="custom-keys" class="u-cf">
+              <div class="key custom-key-m">M</div><div class="key custom-key-2">2</div><div class="key custom-key-3">3</div>
+            </div>
+            <br><br>
+            <label for="add-key" data-l10n-id="t4122"></label>
+            <select id="add-key" class="small">
+              <option selected></option>
+            </select>
+            <br><br>
+            <label for="remove-key" data-l10n-id="t4123"></label>
+            <select id="remove-key" class="small">
+              <option selected></option>
+            </select>
+          </section>
+        </div>
+        <div id="settings-shortcuts" class="tab u-display--none">
+          <section id="customize-shortcuts">
+            <h3 class="u-display--inline-block" data-l10n-id="h421"></h3>
+            <div class="u-cf">
+              <div id="customize-shortcuts--left" class="u-float--left">
+                <h4 data-l10n-id="h422"></h4>
+                <table>
+                  <tbody>
+                    <tr>
+                      <td>
+                        <input type="checkbox" id="sc-m" name="m" class="sc-cb">
+                        <label for="sc-m" class="fake-cb"><span>&#10003;</span> Marker M</label>
+                      </td>
+                      <td>
+                        <select id="shortcut-select-m" class="shortcut-select big" name="m">
+                          <option value="">M</option>
+                          <option value="ctrlKey">Ctrl + M</option>
+                          <option value="shiftKey">Shift + M</option>
+                          <option value="altKey">Alt + M</option>
+                          <option value="ctrlKey-shiftKey">Ctrl + Shift + M</option>
+                          <option value="shiftKey-altKey">Shift + Alt + M</option>
+                          <option value="metaKey">Cmd (Mac) + M</option>
+                          <option value="metaKey-shiftKey">Cmd + Shift + M</option>
+                          <option value="metaKey-altKey">Cmd + Alt + M</option>
+                        </select>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <input type="checkbox" id="sc-2" name="2" class="sc-cb">
+                        <label for="sc-2" class="fake-cb"><span>&#10003;</span> Marker 2</label>
+                      </td>
+                      <td>
+                        <select id="shortcut-select-2" class="shortcut-select big" name="2">
+                          <option value="">2</option>
+                          <option value="ctrlKey">Ctrl + 2</option>
+                          <option value="shiftKey">Shift + 2</option>
+                          <option value="altKey">Alt + 2</option>
+                          <option value="metaKey">Cmd (Mac) + 2</option>
+                        </select>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <input type="checkbox" id="sc-3" name="3" class="sc-cb">
+                        <label for="sc-3" class="fake-cb"><span>&#10003;</span> Marker 3</label>
+                      </td>
+                      <td>
+                        <select id="shortcut-select-3" class="shortcut-select big" name="3">
+                          <option value="">3</option>
+                          <option value="ctrlKey">Ctrl + 3</option>
+                          <option value="shiftKey">Shift + 3</option>
+                          <option value="altKey">Alt + 3</option>
+                          <option value="metaKey">Cmd (Mac) + 3</option>
+                        </select>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <input type="checkbox" id="sc-w" name="w" class="sc-cb">
+                        <label for="sc-w" class="fake-cb"><span>&#10003;</span> <sup data-l10n-id="t421"></sup></label>
+                      </td>
+                      <td>
+                        <select id="shortcut-select-w" class="shortcut-select big" name="w">
+                          <option value="">W</option>
+                          <option value="ctrlKey">Ctrl + W</option>
+                          <option value="shiftKey">Shift + W</option>
+                          <option value="altKey">Alt + W</option>
+                          <option value="ctrlKey-shiftKey">Ctrl + Shift + W</option>
+                          <option value="ctrlKey-altKey">Ctrl + Alt + W</option>
+                          <option value="shiftKey-altKey">Shift + Alt + W</option>
+                          <option value="metaKey">Cmd (Mac) + W</option>
+                          <option value="metaKey-shiftKey">Cmd + Shift + W</option>
+                          <option value="metaKey-altKey">Cmd + Alt + W</option>
+                        </select>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <input type="checkbox" id="sc-z" name="z" class="sc-cb">
+                        <label for="sc-z" class="fake-cb"><span>&#10003;</span> <sup data-l10n-id="t422"></sup></label>
+                      </td>
+                      <td>
+                        <select id="shortcut-select-z" class="shortcut-select big" name="z">
+                          <option value="ctrlKey">Ctrl + Z</option>
+                          <option value="shiftKey">Shift + Z</option>
+                          <option value="altKey">Alt + Z</option>
+                          <option value="ctrlKey-shiftKey">Ctrl + Shift + Z</option>
+                          <option value="ctrlKey-altKey">Ctrl + Alt + Z</option>
+                          <option value="shiftKey-altKey">Shift + Alt + Z</option>
+                          <option value="metaKey">Cmd (Mac) + Z</option>
+                          <option value="metaKey-shiftKey">Cmd + Shift + Z</option>
+                          <option value="metaKey-altKey">Cmd + Alt + Z</option>
+                        </select>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <input type="checkbox" id="sc-y" name="y" class="sc-cb">
+                        <label for="sc-y" class="fake-cb"><span>&#10003;</span> <sup data-l10n-id="t423"></sup></label>
+                      </td>
+                      <td>
+                        <select id="shortcut-select-y" class="shortcut-select big" name="y">
+                          <option value="ctrlKey">Ctrl + Y</option>
+                          <option value="shiftKey">Shift + Y</option>
+                          <option value="altKey">Alt + Y</option>
+                          <option value="ctrlKey-shiftKey">Ctrl + Shift + Y</option>
+                          <option value="ctrlKey-altKey">Ctrl + Alt + Y</option>
+                          <option value="shiftKey-altKey">Shift + Alt + Y</option>
+                          <option value="metaKey">Cmd (Mac) + Y</option>
+                          <option value="metaKey-shiftKey">Cmd + Shift + Y</option>
+                          <option value="metaKey-altKey">Cmd + Alt + Y</option>
+                        </select>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <input type="checkbox" id="sc-d" name="d" class="sc-cb">
+                        <label for="sc-d" class="fake-cb"><span>&#10003;</span> <sup data-l10n-id="t4210"></sup></label>
+                      </td>
+                      <td>
+                        <select id="shortcut-select-d" class="shortcut-select big" name="d">
+                          <option value="ctrlKey">Ctrl + D</option>
+                          <option value="shiftKey">Shift + D</option>
+                          <option value="altKey">Alt + D</option>
+                          <option value="ctrlKey-shiftKey">Ctrl + Shift + D</option>
+                          <option value="ctrlKey-altKey">Ctrl + Alt + D</option>
+                          <option value="shiftKey-altKey">Shift + Alt + D</option>
+                          <option value="metaKey">Cmd (Mac) + D</option>
+                          <option value="metaKey-shiftKey">Cmd + Shift + D</option>
+                          <option value="metaKey-altKey">Cmd + Alt + D</option>
+                        </select>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <input type="checkbox" id="sc-b" name="b" class="sc-cb">
+                        <label for="sc-b" class="fake-cb"><span>&#10003;</span> <sup data-l10n-id="t424"></sup></label>
+                      </td>
+                      <td>
+                        <select id="shortcut-select-b" class="shortcut-select big" name="b">
+                          <option value="ctrlKey">Ctrl + B</option>
+                          <option value="shiftKey">Shift + B</option>
+                          <option value="altKey">Alt + B</option>
+                          <option value="ctrlKey-shiftKey">Ctrl + Shift + B</option>
+                          <option value="ctrlKey-altKey">Ctrl + Alt + B</option>
+                          <option value="shiftKey-altKey">Shift + Alt + B</option>
+                          <option value="metaKey">Cmd (Mac) + B</option>
+                          <option value="metaKey-shiftKey">Cmd + Shift + B</option>
+                          <option value="metaKey-altKey">Cmd + Alt + B</option>
+                        </select>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <input type="checkbox" id="sc-s" name="s" class="sc-cb">
+                        <label for="sc-s" class="fake-cb"><span>&#10003;</span> <sup data-l10n-id="t425"></sup></label>
+                      </td>
+                      <td>
+                        <select id="shortcut-select-s" class="shortcut-select big" name="s">
+                          <option value="ctrlKey">Ctrl + S</option>
+                          <option value="shiftKey">Shift + S</option>
+                          <option value="altKey">Alt + S</option>
+                          <option value="ctrlKey-shiftKey">Ctrl + Shift + S</option>
+                          <option value="ctrlKey-altKey">Ctrl + Alt + S</option>
+                          <option value="shiftKey-altKey">Shift + Alt + S</option>
+                          <option value="metaKey">Cmd (Mac) + S</option>
+                          <option value="metaKey-shiftKey">Cmd + Shift + S</option>
+                          <option value="metaKey-altKey">Cmd + Alt + S</option>
+                        </select>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <input type="checkbox" id="sc-arrowup" name="arrowup" class="sc-cb">
+                        <label for="sc-arrowup"><span>&#10003;</span> <sup data-l10n-id="t4212"></sup></label>
+                      </td>
+                      <td>
+                        <select id="shortcut-select-arrowup" class="shortcut-select big" name="arrowup">
+                          <option value="altKey">Alt + &#8593;</option>
+                          <option value="ctrlKey-altKey">Ctrl + Alt + &#8593;</option>
+                        </select>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <input type="checkbox" id="sc-arrowdown" name="arrowdown" class="sc-cb">
+                        <label for="sc-arrowdown"><span>&#10003;</span> <sup data-l10n-id="t4213"></sup></label>
+                      </td>
+                      <td>
+                        <select id="shortcut-select-arrowdown" class="shortcut-select big" name="arrowdown">
+                          <option value="altKey">Alt + &#8595;</option>
+                          <option value="ctrlKey-altKey">Ctrl + Alt + &#8595;</option>
+                        </select>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div id="customize-shortcuts--right" class="u-float--left">
+                <h4 data-l10n-id="h423"></h4>
+                <div class="option-row">
+                  <input type="checkbox" id="cm-m" name="m" class="ctm-cb">
+                  <label for="cm-m" class="fake-cb"><span>&#10003;</span> Marker M</label>
+                </div>
+                <div class="option-row">
+                  <input type="checkbox" id="cm-n" name="n" class="ctm-cb">
+                  <label for="cm-n" class="fake-cb"><span>&#10003;</span> <sup data-l10n-id="t4211"></sup></label>
+                </div>
+                <div class="option-row">
+                  <input type="checkbox" id="cm-w" name="w" class="ctm-cb">
+                  <label for="cm-w" class="fake-cb"><span>&#10003;</span> <sup data-l10n-id="t427"></sup></label>
+                </div>
+                <div class="option-row">
+                  <input type="checkbox" id="cm-b" name="b" class="ctm-cb">
+                  <label for="cm-b" class="fake-cb"><span>&#10003;</span> <sup data-l10n-id="t428"></sup></label>
+                </div>
+                <div class="option-row">
+                  <input type="checkbox" id="cm--b" name="-b" class="ctm-cb">
+                  <label for="cm--b" class="fake-cb"><span>&#10003;</span> <sup data-l10n-id="t429"></sup></label>
+                </div>
+                <div class="option-row">
+                  <input type="checkbox" id="cm-d" name="d" class="ctm-cb">
+                  <label for="cm-d" class="fake-cb"><span>&#10003;</span> <sup data-l10n-id="t4210"></sup></label>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+        <div id="settings-history" class="tab u-display--none">
+          <h3 class="u-display--inline-block" data-l10n-id="h431"></h3>
+          <section id="customize-save">
+            <h4 data-l10n-id="h432"></h4>
+            <div class="option-row">
+              <input type="radio" id="auto-save" name="save-opt" class="save-opt" data-id="1">
+              <label for="auto-save" class="fake-rb"><span>&#149;</span> <sup data-l10n-id="t431"></sup></label>
+            </div>
+            <div class="option-row">
+              <input type="radio" id="manual-save" name="save-opt" class="save-opt" data-id="">
+              <label for="manual-save" class="fake-rb"><span>&#149;</span> <sup data-l10n-id="t432"></sup></label>
+            </div>
+            <br>
+            <div class="option-row">
+              <input type="checkbox" id="private-save" name="saveInPriv">
+              <label class="fake-cb width--full" for="private-save" class="fake-cb"><span>&#10003;</span> <sup data-l10n-id="t4318"></sup></label>
+            </div>
+          </section>
+          <section id="customize-naming">
+            <h4 data-l10n-id="h433"></h4>
+            <div class="option-row">
+              <input type="radio" id="name-date" class="naming-opt" name="naming-opt" data-id="date">
+              <label for="name-date" class="fake-rb"><span>&#149;</span> <sup data-l10n-id="t434"></sup></label>
+            </div>
+            <div class="option-row">
+              <input type="radio" id="name-title" class="naming-opt" name="naming-opt" data-id="title">
+              <label for="name-title" class="fake-rb"><span>&#149;</span> <sup data-l10n-id="t435"></sup></label>
+            </div>
+            <div class="option-row open" id="custom-name-row">
+              <input type="radio" id="name-custom" class="naming-opt" name="naming-opt" data-id="custom">
+              <label for="name-custom" class="fake-rb"><span>&#149;</span> <sup data-l10n-id="t436"></sup></label>
+            </div>
+          </section>
+          <section id="customize-quickbuttons">
+            <h4 data-l10n-id="h434"></h4>
+            <div class="option-row">
+              <label data-l10n-id="t437"></label>
+              <select id="quickbutton-download-select" class="customize-quickbuttons" name="download">
+                <option value="text" data-l10n-id="t439"></option>
+                <option value="text +meta" data-l10n-id="t438"></option>
+                <option value="text +notes" data-l10n-id="t4317"></option>
+                <option value="text +lost" data-l10n-id="x423"></option>
+                <option value="text m" data-l10n-id="t4310"></option>
+                <option value="text 2" data-l10n-id="t4311"></option>
+                <option value="text 3" data-l10n-id="t4312"></option>
+                <option value="text c" data-l10n-id="t4313"></option>
+                <option value="text lost" data-l10n-id="x424"></option>
+                <option value="title" data-l10n-id="t4314"></option>
+                <option value="url" data-l10n-id="t4315"></option>
+              </select>
+            </div>
+          </section>
+        </div>
+        <div id="settings-notifications" class="tab u-display--none">
+          <section id="customize-notifications">
+            <h3 class="u-display--inline-block" data-l10n-id="h451"></h3>
+            <br><br>
+            <div class="option-row">
+              <input type="checkbox" id="notes-new" name="saveNote">
+              <label for="notes-new" class="fake-cb width--full"><span>&#10003;</span> <sup><sup data-l10n-id="t451"></sup><sup data-l10n-id="t451b"></sup></sup></label>
+            </div>
+            <br>
+            <div class="option-row">
+              <input type="checkbox" id="notes-changed" name="changedNote" class="notes-cb">
+              <label for="notes-changed" class="fake-cb width--full"><span>&#10003;</span> <sup><sup data-l10n-id="t452"></sup><sup data-l10n-id="t452b"></sup></sup></label>
+            </div>
+            <br>
+            <div class="option-row">
+              <input type="checkbox" id="notes-pbm" name="pbmNote" class="notes-cb">
+              <label for="notes-pbm" class="fake-cb width--full"><span>&#10003;</span> <sup data-l10n-id="t453"></sup></label>
+            </div>
+            <br>
+            <div class="option-row">
+              <input type="checkbox" id="notes-restoration-failure" name="failureNote" class="notes-cb">
+              <label for="notes-restoration-failure" class="fake-cb width--full"><span>&#10003;</span> <sup data-l10n-id="t454"></sup></label>
+            </div>
+            <br>
+            <div class="option-row">
+              <input type="checkbox" id="notes-restoration-success" name="successNote" class="notes-cb">
+              <label for="notes-restoration-success" class="fake-cb width--full"><span>&#10003;</span> <sup data-l10n-id="t456"></sup></label>
+            </div>
+            <br>
+            <div class="option-row">
+              <input type="checkbox" id="notes-error" name="errorNote" class="notes-cb">
+              <label for="notes-error" class="fake-cb width--full"><span>&#10003;</span> <sup data-l10n-id="t455"></sup></label>
+            </div>
+          </section>
+        </div>
+        <div id="settings-misc" class="tab u-display--none">
+          <section id="customize-misc">
+            <h3 class="u-display--inline-block" data-l10n-id="h441"></h3>
+            <br>
+            <div class="option-row">
+              <h4 data-l10n-id="h444"></h4>
+              <input type="checkbox" id="misc-noteicon" name="noteicon" class="misc-cb">
+              <label for="misc-noteicon" class="fake-cb width--full"><span>&#10003;</span> <sup data-l10n-id="t447"></sup></label>
+              <select id="tmuipos--noteicon" class="cb-sub-select border-top tmuipos" name="tmuipos">
+                <option value="top-right" data-l10n-id="tmuipos_topright"></option>
+                <option value="bottom-right" data-l10n-id="tmuipos_bottomright"></option>
+                <option value="top-left" data-l10n-id="tmuipos_topleft"></option>
+                <option value="bottom-left" data-l10n-id="tmuipos_bottomleft"></option>
+              </select>
+              <br><br>
+              <input type="checkbox" id="misc-noteonclick" name="noteonclick" class="misc-cb">
+              <label for="misc-noteonclick" class="fake-cb width--full"><span>&#10003;</span> <sup data-l10n-id="t448"></sup></label>
+              <br><br>
+              <input type="checkbox" id="misc-notetransp" name="notetransp" class="misc-cb">
+              <label for="misc-notetransp" class="fake-cb width--full"><span>&#10003;</span> <sup data-l10n-id="t448b"></sup></label>
+              <br><br>
+              <small data-l10n-id="t449"></small>
+            </div>
+            <br>
+            <div class="option-row">
+              <h4 data-l10n-id="h442"></h4>
+              <input type="checkbox" id="misc-bm" name="bmicon" class="misc-cb">
+              <label for="misc-bm" class="fake-cb width--full"><span>&#10003;</span> <sup data-l10n-id="t442"></sup></label>
+              <select id="tmuipos--bmicon" class="cb-sub-select border-top tmuipos" name="tmuipos">
+                <option value="top-right" data-l10n-id="tmuipos_topright"></option>
+                <option value="bottom-right" data-l10n-id="tmuipos_bottomright"></option>
+                <option value="top-left" data-l10n-id="tmuipos_topleft"></option>
+                <option value="bottom-left" data-l10n-id="tmuipos_bottomleft"></option>
+              </select>
+              <br><br>
+              <small data-l10n-id="t444"></small>
+            </div>
+            <br>
+            <div class="option-row">
+              <h4 data-l10n-id="h443"></h4>
+              https://<input type="text" id="custom-search--start" class="custom-search-input" data-l10n-attr data-l10n-placeholder="attr_2"><span data-l10n-id="t443"></span><input type="text" id="custom-search--end" class="custom-search-input" data-l10n-attr data-l10n-placeholder="attr_3">
+              <span id="custom-search--submitted" class="u-display--none u-color--green u-float--none u-font-weight--bold">&#10003;</span>
+              <button type="button" id="custom-search" data-l10n-id="t446"></button>
+              <br><br>
+              <small data-l10n-id="t445"></small>
+            </div>
+          </section>
+        </div>
+      </div>
+
+
+      <div id="sharing" class="content u-display--none">
+        <h2>Sharing</h2>
+        <section class="block-spacing">
+          <h4>Account Settings</h4>
+          <div id="sm-account-settings" class="u-cf">
+           
+          </div>
+
+          <div class="u-cf">
+            
+          </div>
+        </section> 
+        <section class="block-spacing">
+          <h4>Classes</h4>
+          <div class="u-cf">
+            <input type="text" name="new_class" id="sm_new_class"/>
+            <button id="sm-add-new-class-btn">Add New Class</button>
+          </div>
+          <div style="border-bottom: 1px solid gray;padding-bottom: 5px;" class="u-cf" id="sm-classes-cn">
+            
+          </div>
+
+          <div class="u-cf">
+            
+          </div>
+        </section>       
+        <section class="block-spacing">
+          <h4>Sharing Settings</h4>
+          <div class="u-cf">
+            Sharing Enable For New Entries <span id="sm-sharing-enable-cn"></span>
+          </div>
+          <div class="u-cf">
+            Default Class <span id="currunt_default_class"></span> <span id="default_class_cn"></span>
+          </div>
+          <div style="text-align: center;border-bottom: 1px solid gray;padding-bottom: 5px;" class="u-cf">
+            <button id="sm_save_sharing_setting">Save Sharing Settings</button>
+          </div>
+
+          <div class="u-cf">
+            
+          </div>
+        </section>
+      </div>
+
+
+
+
+
+
+      <div id="history" class="content u-display--none">
+        <h2 data-l10n-id="h50"></h2>
+        <div class="block-spacing u-display--none" id="no-entries">
+          <p data-l10n-id="t5122"></p>
+        </div>
+        <section class="u-cf">
+          <div id="count" class="u-float--left">
+            <select id="entries-per-page" class="border-top">
+              <option value="10">10</option>
+              <option value="25">25</option>
+              <option value="50">50</option>
+              <option value="100000" data-l10n-id="t5120"></option>
+            </select>
+            <span data-l10n-id="t5119" class="u-color--grey-light"></span>
+            <span id="entries-count" class="u-color--turquoise"></span>
+          </div>
+          <div id="page-actions" class="u-float--right u-cf">
+            <div id="sort">
+              <select id="sort-entries" class="border-top">
+                <option data-l10n-id="t5118" selected hidden></option>
+                <option value="date-last" data-l10n-id="t5114"></option>
+                <option value="date-created" data-l10n-id="t5115"></option>
+                <option value="name-az" data-l10n-id="t5116"></option>
+                <option value="name-za" data-l10n-id="t5117"></option>
+              </select>
+            </div>
+            <div id="filter">
+              <select id="filter-entries" class="border-top">
+                <option data-l10n-id="t5124" selected hidden></option>
+              </select>
+              <button type="button" id="remove-filter" class="btn--small u-pull--right">&#10005;</button>
+            </div>
+            <div id="view">
+              <select id="set-view" class="border-top">
+                <option selected hidden>Ansicht</option>
+                <option value="list">Liste</option>
+                <option value="detail-list">Detail-Liste</option>
+              </select>
+            </div>
+            <div id="history-actions">
+              <select id="action" class="action border-top">
+                <option data-l10n-id="t5121" selected hidden></option>
+                <option class="toggle-button" data-target="specification tag" data-toggle="remove add" value="tag" data-l10n-id="t5123"></option>
+                <option class="toggle-button" data-target="specification tag" data-toggle="remove remove" value="export" data-l10n-id="t5113"></option>
+                <option class="toggle-button" data-target="specification tag" data-toggle="add remove" value="download" data-l10n-id="t513"></option>
+                <option class="toggle-button" data-target="specification tag" data-toggle="remove remove" value="delete" data-l10n-id="t515"></option>
+                <option class="toggle-button" data-target="specification tag" data-toggle="remove remove" value="clean" data-l10n-id="t516"></option>
+                <option class="toggle-button" data-target="specification tag" data-toggle="remove remove" value="visit" data-l10n-id="t517"></option>
+              </select>
+              <select id="specification" class="specification border-top u-display--none">
+                <option value="text" data-l10n-id="t439"></option>
+                <option value="text +meta" selected data-l10n-id="t438"></option>
+                <option value="text +notes" data-l10n-id="t4317"></option>
+                <option value="text +lost" data-l10n-id="x423"></option>
+                <option value="text m" data-l10n-id="t4310"></option>
+                <option value="text 2" data-l10n-id="t4311"></option>
+                <option value="text 3" data-l10n-id="t4312"></option>
+                <option value="text c" data-l10n-id="t4313"></option>
+                <option value="text lost" data-l10n-id="x424"></option>
+                <option value="title" data-l10n-id="t4314"></option>
+                <option value="url" data-l10n-id="t4315"></option>
+              </select>
+              <input type="text" id="tag" class="border-top u-float--left u-display--none" data-l10n-attr data-l10n-placeholder="attr_4">
+              <button type="button" class="action-button btn--small" data-action="processSelection" data-l10n-attr data-l10n-title="title_submit_action"></button>
+            </div>
+            <div id="search" class="u-display--none">
+              <span id="search-count" class="u-color--turquoise"></span>
+              <button type="button" id="search-toggle" class="btn--small u-pull--right">&#10005;</button>
+              <input id="search-entries" class="u-pull--right border-top" data-l10n-attr data-l10n-placeholder="attr_1" type="search">
+            </div>
+          </div>
+          <div id="checkmark-all-container" class="u-clear">
+            <input class="checkmark-all" id="checkmark-all" type="checkbox">
+            <label for="checkmark-all" class="fake-cb nowrap u-color--turquoise"><span>&#10003;</span> <sup data-l10n-id="t518"></sup></label>
+          </div>
+        </section>
+        <section id="entries">
+          <div id="entry-template" class="entry u-display--none">
+            <input type="checkbox">
+            <label class="fake-cb"><span>&#10003;</span></label>
+            <span class="name" data-l10n-attr data-l10n-title="title_name"></span>
+            <span class="view" data-l10n-attr data-l10n-title="title_view"></span>
+            <div class="quick-buttons">
+              <div class="switch switch--sync u-cf quick-action u-float--left" data-action="sync" data-l10n-attr data-l10n-title="quickbutton_sync">
+                <div class="switch switch__indicator quick-action" data-action="sync"></div>
+              </div>
+              <button type="button" class="download action-button quick-action btn--small u-float--left" data-action="download" data-l10n-attr data-l10n-title="quickbutton_download"></button>
+              <button type="button" class="delete action-button quick-action btn--small u-float--left" data-action="delete" data-l10n-attr data-l10n-title="quickbutton_delete">&#10005;</button>
+               <button type="button" class="share action-button quick-action btn--small u-float--left" id="share" data-action="share" data-l10n-title="quickbutton_share">S</button>
+            </div>
+            <div class="details">
+              <div><span style="padding: 2px;background: #bababa;border-radius: 2px;color: white;font-size: 10px;border: 1px solid #9f9f9f;" class="sm_shared_status"></span> <span class="sm_classess"></span></div>
+              <div class="tag"></div>
+              <ul class="u-cf">
+                <li><span class="created"></span> &ndash; <span class="last"></span></li>
+                <li><span data-l10n-id="t5111"></span> <span class="count"></span></li>
+              </ul>
+            </div>
+          </div>
+        </section>
+        <section id="paginator">
+          <ul id="paginator-list"><li class="prev"></li><li class="next"></li></ul>
+        </section>
+      </div>
+
+      <div id="sync" class="content u-display--none">
+        <h2 data-l10n-id="h90"></h2>
+        <section class="block-spacing">
+          <div class="u-cf">
+            <div id="sync-switch--settings" class="switch switch--sync u-cf active u-float--left" data-type="settings">
+              <div class="switch switch__indicator"></div>
+            </div>
+            <p data-l10n-id="t911" class="u-float--left"></p>
+          </div>
+          <div class="u-cf">
+            <div id="sync-switch--history" class="switch switch--sync u-cf active u-float--left" data-type="history">
+              <div class="switch switch__indicator"></div>
+            </div>
+            <p data-l10n-id="t912" class="u-float--left"></p>
+          </div>
+          <br>
+          <p data-l10n-id="t913"></p>
+          <p data-l10n-id="t914"></p>
+        </section>
+      </div>
+
+      <div id="export" class="content u-display--none">
+        <h2 data-l10n-id="h60"></h2>
+        <section class="block-spacing">
+          <p><span data-l10n-id="t614"></span><br>
+          <span data-l10n-id="t615"></span><br><br>
+          <small data-l10n-id="t620"></small></p>
+          <br>
+          <div class="u-cf">
+            <h3 data-l10n-id="h611"></h3>
+            <a class='export' id="export-local" download="textmarker-data.json" href="">
+              <button type="button" class="export-button" data-type="local" data-l10n-id="t616"></button>
+            </a>
+            <button type="button" class="import-button" data-l10n-id="t618" data-type="local"></button>
+            <input id="import--local" type="file" value="Import" class="import-file" data-type="local">
+          </div>
+          <br><br>
+          <div class="u-cf">
+            <h3 data-l10n-id="h612"></h3>
+            <a class='export' id="export-synced" download="textmarker-data.json" href="">
+              <button type="button" class="export-button" data-type="synced" data-l10n-id="t617"></button>
+            </a>
+            <button type="button" class="import-button" data-l10n-id="t619" data-type="sync"></button>
+            <input id="import--sync" type="file" value="Import" class="import-file" data-type="sync">
+          </div>
+          <br>
+          <div id="import-error" class="u-color--red"></div>
+        </section>
+      </div>
+
+      <div id="contact" class="content u-display--none">
+        <h2 data-l10n-id="h70"> </h2>
+        <section class="block-spacing">
+          <p><span data-l10n-id="t711"></span><br>
+            <span data-l10n-id="t712"></span>
+          </p>
+          <a id="log-mail" href="mailto:undflybir@gmx.de">Oder sende ein Textmarker-Fehlerprotokoll per E-Mail</a>
+        </section>
+        <section class="block-spacing">
+          <p><span data-l10n-id="t713"></span><br>
+            <span data-l10n-id="t714"></span>
+          </p>
+          <a href="mailto:undflybir@gmx.de"><span class="at">@</span>underflyingbirches</a>
+        </section>
+        <section class="block-spacing">
+          <p data-l10n-id="t715"></p>
+          <a href="https://github.com/ufb/Textmarker/issues">https://github.com/ufb/Textmarker/issues</a>
+        </section>
+        <div class="seperator"></div>
+        <section class="block-spacing">
+          <p data-l10n-id="t716"></p>
+          <a id="moz-addon--contact" class="moz-addon" href=""></a>
+          <br><br>
+          <p data-l10n-id="t717"></p>
+          <a id="moz-developer--contact" class="moz-developer" href=""></a>
+          <br><br>
+          <p data-l10n-id="t718"></p>
+          <a id="github--code" href="https://github.com/ufb/Textmarker">https://github.com/ufb/Textmarker/</a>
+        </section>
+      </div>
+
+      <div id="logs" class="content u-display--none nologs">
+        <h2 data-l10n-id="h80"></h2>
+        <section class="block-spacing">
+          <p id="no-logs" data-l10n-id="t811" class="u-display--none"></p>
+          <table id="logs-table">
+            <thead>
+              <tr>
+                <th data-l10n-id="t812"></th>
+                <th data-l10n-id="t813"></th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+          <br>
+          <button type="button" id="clear-logs" data-l10n-id="t814"></button>
+        </section>
+      </div>
+    </section>
+
+  </div>
+  <script src="addon-page.wp.js"></script>
+</body>
+</html>

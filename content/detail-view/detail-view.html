@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta content="utf-8" http-equiv="encoding">
+  <title>Detail-Ansicht</title>
+	<link rel="stylesheet" type="text/css" href="detail-view.css">
+</head>
+<body>
+  <header>
+    <h1 id="header"></h1>
+    <p><span data-l10n-id="detail_tag"></span>: <span id="tag"></span></p>
+  </header>
+  <div id="main">
+    <section id="meta">
+      <h2 data-l10n-id="detail_meta"></h2>
+      <table id="table--meta">
+        <tbody>
+          <tr><td><span class="meta__field" data-l10n-id="created"></span></td><td><span id="created"></span></td></tr>
+          <tr><td><span class="meta__field" data-l10n-id="last_modified"></span></td><td><span id="last_modified"></span></td></tr>
+          <tr><td><span class="meta__field" data-l10n-id="page_title"></span></td><td><span id="title"></span></td></tr>
+          <tr><td><span class="meta__field">URL</span></td><td><a id="url" target="_blank"></a></td></tr>
+          <tr><td><span class="meta__field" data-l10n-id="detail_sync"></span></td><td><span id="synced"></span></td></tr>
+        </tbody>
+      </table>
+    </section>
+    <section id="marks">
+      <h2><span data-l10n-id="t439"></span> <span id="marks-count"></span></h2>
+      <table id="table--marks" class="table--bordered">
+        <colgroup><col></col><col></col></colgroup>
+        <thead>
+          <tr><th data-l10n-id="detail_text"></th><th><span data-l10n-id="note"></span><span class="col-toggle" data-l10n-attr data-l10n-title="title_coltoggle"></span></th></tr>
+        </thead>
+        <tbody id="marks-content">
+          <tr id="mark-template" class="mark"><td><span class="mark-text"></span></td><td><span class="mark-note"></span></td></tr>
+        </tbody>
+      </table>
+    </section>
+  </div>
+
+  <script src="detail-view.wp.js"></script>
+</body>
+</html>

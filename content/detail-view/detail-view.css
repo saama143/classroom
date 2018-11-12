@@ -1,0 +1,119 @@
+html, body, object, iframe,
+div, h1, h2, h3, h4, h5, h6, p,
+span, a, abbr, img,
+em, small, sub, sup,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label,
+table, caption, tbody, thead, tr, th, td {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-weight: inherit;
+  font-style: inherit;
+  font-family: inherit;
+  line-height: normal;
+  vertical-align: baseline;
+  color: inherit; }
+
+:focus {
+  outline: none; }
+
+::-moz-focus-inner {
+  border: 0; }
+
+* {
+  box-sizing: border-box; }
+
+body {
+  font-family: Verdana, Arial, sans-serif;
+  color: #37414b;
+  cursor: default;
+  font-size: 15px; }
+
+body {
+  background: #fbfbfb; }
+
+p {
+  margin-bottom: 5px; }
+
+header {
+  background: #37414b;
+  padding: 10px 20px; }
+
+header p {
+  color: #2ba5b7; }
+
+section {
+  margin-bottom: 30px; }
+
+section:last-child {
+  margin: 0; }
+
+h1 {
+  color: #fbfbfb;
+  font-size: 20px; }
+
+h2 {
+  font-size: 17px;
+  margin-bottom: 15px; }
+
+table {
+  border-collapse: collapse; }
+  table td {
+    padding: 2px 15px 2px 0; }
+  table.table--bordered {
+    width: 100%; }
+    table.table--bordered col {
+      width: 50%; }
+    table.table--bordered td, table.table--bordered th {
+      border: 1px solid #c8c8c8; }
+    table.table--bordered th {
+      padding: 5px 10px;
+      text-align: left; }
+    table.table--bordered td {
+      padding: 10px; }
+  .no-notes table col:first-child {
+    width: 100%; }
+  .no-notes table col:last-child {
+    width: 0; }
+  .no-notes table thead {
+    display: none; }
+  .no-notes table td:last-child {
+    display: none; }
+  .hide-notes table col:first-child {
+    width: 100%; }
+  .hide-notes table col:last-child {
+    width: 0; }
+  .hide-notes table th:last-child {
+    text-indent: -1000px;
+    overflow: hidden; }
+  .hide-notes table td:last-child {
+    border: 0; }
+  .hide-notes table .mark-note {
+    display: none; }
+
+.col-toggle {
+  background-image: url(../../icons/double-arrow.png);
+  background-repeat: no-repeat;
+  background-position: 0 center, 0 0;
+  background-size: 18px, 100%;
+  width: 18px;
+  height: 20px;
+  float: right;
+  cursor: pointer; }
+  .hide-notes .col-toggle {
+    transform: rotate(180deg); }
+
+a, .link {
+  color: #2ba5b7;
+  text-decoration: none;
+  cursor: pointer; }
+  a:hover, .link:hover {
+    text-decoration: underline; }
+
+#main {
+  padding: 20px; }
+
+#marks-count {
+  color: #c8c8c8; }
